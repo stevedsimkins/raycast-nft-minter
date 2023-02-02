@@ -1,0 +1,69 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "nft-minter",
+  "title": "NFT Minter",
+  "description": "Mint an NFT with Pinata and Crossmint",
+  "icon": "command-icon.png",
+  "author": "stevedsimkins",
+  "categories": [
+    "Applications",
+    "Fun",
+    "Media"
+  ],
+  "license": "MIT",
+  "preferences": [
+    {
+      "name": "PINATA_JWT",
+      "description": "Your Pinata API key JWT which can be created at https://app.pinata.cloud/developers",
+      "type": "password",
+      "required": true,
+      "title": "Pinata API JWT"
+    },
+    {
+      "name": "GATEWAY",
+      "description": "Paste in your Dedicated Gateway or public gateway in the following format: https://gateway.pinata.cloud",
+      "type": "textfield",
+      "required": true,
+      "title": "IPFS Gateway",
+      "placeholder": "https://gateway.pinata.cloud"
+    },
+    {
+      "name": "TATUM_KEY",
+      "description": "Paste in your Tatum API Key, instructions on how to obtain one can be found [here](https://apidoc.tatum.io/#section/Authentication)",
+      "type": "textfield",
+      "required": true,
+      "title": "Tatum API Key"
+    }
+  ],
+
+  "commands": [
+    {
+      "name": "index",
+      "title": "Mint NFT",
+      "description": "Select your content, choose some details, about the NFT and Mint!",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.46.1",
+    "axios": "^1.2.4",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
